@@ -1,0 +1,12 @@
+{
+  "name": "alura-password-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "sass:watch": "sass --watch sass/styles.scss:css/styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8"
+  }
+}
