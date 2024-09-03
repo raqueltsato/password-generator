@@ -110,6 +110,11 @@ h1 {
     input {
         width: 24px;
         height: 24px;
+
+        &.filled {
+            background-color: #fff;
+            color: black;
+        }
     }
     .checkbox-wrapper {
         margin-bottom: 16px;
@@ -117,26 +122,46 @@ h1 {
 }
 
 .force-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    .box {
-        width: 100%;
-        height: 32px;
-        background-color: $empty;
+    width: 300px;
+
+    .force-box-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    
+        .box {
+            width: 100%;
+            height: 32px;
+            background-color: $empty;
+                
+            &.weak {
+                background-color: $weak;
+            }
             
-        &.weak {
-            background-color: $weak;
+            &.medium {
+                background-color: $medium;
+            }
+            
+            &.strong {
+                background-color: $strong;
+            }
+    
         }
-        
-        &.medium {
-            background-color: $medium;
-        }
-        
-        &.strong {
-            background-color: $strong;
-        }
-
     }
+    .force-description {
+        display: flex;
+        justify-content: space-between;
+    }
+}
 
+.copy-button {
+    margin-top: 36px;
+    outline: none;
+    border: none;
+    background-color: $pink;
+    height: 46px;
+    font-size: 22px;
+    border-radius: 4px;
+    padding: 10px 12px;
+    
 }

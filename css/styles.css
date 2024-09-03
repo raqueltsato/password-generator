@@ -98,28 +98,50 @@ h1 {
   width: 24px;
   height: 24px;
 }
+.password-type-checkbox input.filled {
+  background-color: #fff;
+  color: black;
+}
 .password-type-checkbox .checkbox-wrapper {
   margin-bottom: 16px;
 }
 
 .force-wrapper {
+  width: 300px;
+}
+.force-wrapper .force-box-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
 }
-.force-wrapper .box {
+.force-wrapper .force-box-wrapper .box {
   width: 100%;
   height: 32px;
   background-color: #2c1746;
 }
-.force-wrapper .box.weak {
+.force-wrapper .force-box-wrapper .box.weak {
   background-color: #e71b32;
 }
-.force-wrapper .box.medium {
+.force-wrapper .force-box-wrapper .box.medium {
   background-color: #faf408;
 }
-.force-wrapper .box.strong {
+.force-wrapper .force-box-wrapper .box.strong {
   background-color: #00ff85;
+}
+.force-wrapper .force-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copy-button {
+  margin-top: 36px;
+  outline: none;
+  border: none;
+  background-color: #fd58ff;
+  height: 46px;
+  font-size: 22px;
+  border-radius: 4px;
+  padding: 10px 12px;
 }
 
 /*# sourceMappingURL=styles.css.map */
