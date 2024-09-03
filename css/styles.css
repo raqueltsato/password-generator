@@ -5,6 +5,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -62,6 +63,20 @@ h1 {
   width: 100%;
   padding: 35px 40px;
 }
+.settings-container .settings-title {
+  font-family: "Roboto Mono", monospace;
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 38px;
+}
+.settings-container .settings-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.settings-container .settings-wrapper .settings-description {
+  font-size: 24px;
+  margin-top: 0;
+}
 .settings-container .input-range {
   -webkit-appearance: none;
   border-radius: 4px;
@@ -70,9 +85,41 @@ h1 {
   outline: none;
   opacity: 0.7;
   transition: opacity 0.15s ease-in-out;
+  width: 100%;
 }
 .settings-container .input-range::-ms-fill-lower {
   background-color: white;
+}
+
+.password-type-checkbox {
+  font-size: 20px;
+}
+.password-type-checkbox input {
+  width: 24px;
+  height: 24px;
+}
+.password-type-checkbox .checkbox-wrapper {
+  margin-bottom: 16px;
+}
+
+.force-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+.force-wrapper .box {
+  width: 100%;
+  height: 32px;
+  background-color: #2c1746;
+}
+.force-wrapper .box.weak {
+  background-color: #e71b32;
+}
+.force-wrapper .box.medium {
+  background-color: #faf408;
+}
+.force-wrapper .box.strong {
+  background-color: #00ff85;
 }
 
 /*# sourceMappingURL=styles.css.map */

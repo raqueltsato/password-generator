@@ -6,6 +6,10 @@
     <title>Gerador de senha</title>
     <link rel="stylesheet" href="css/styles.css">
     <meta name="keywords" content="Gerador de senhas, password-generator">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="content-wrapper">
@@ -23,8 +27,48 @@
             </div>
         </div>
         <div class="settings-container">
-            <h2>Personalize sua senha</h2>
-            <input type="range" class="input-range"/>
+            <h2 class="settings-title">Personalize sua senha</h2>
+            <div class="settings-wrapper">
+                <div class="characters-number">
+                    <p class="settings-description">Número de caracteres</p>
+                    <input type="range" class="input-range"/>
+                </div>
+                <div class="password-type-checkbox">
+                    <p class="settings-description">Características da senha</p>
+                    <form>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="uppercase">
+                            <label for="uppercase">Letras maiúsculas</label>
+                          </div>
+                          <div class="checkbox-wrapper">
+                            <input type="checkbox" id="lowercase">
+                            <label for="lowercase">Letras minúsculas</label>
+                          </div>
+                          <div class="checkbox-wrapper">
+                            <input type="checkbox" id="numbers">
+                            <label for="numbers">Números</label>
+                          </div>
+                          <div class="checkbox-wrapper">
+                            <input type="checkbox" id="symbols">
+                            <label for="symbols">Símbolos</label>
+                          </div>
+                    </form>
+                </div>
+                <div>
+                    <p class="settings-description"> Força da senha</p>
+                    <div class="force-wrapper">
+                        <div class="box weak">&nbsp;</div>
+                        <div class="box">&nbsp;</div>
+                        <div class="box">&nbsp;</div>
+                    </div>
+                    <div class="force-description">
+                        <p>Fraca</p>
+                        <p>Média</p>
+                        <p>Forte</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <script src="js/script.js"></script>
