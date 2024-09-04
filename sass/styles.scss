@@ -142,25 +142,24 @@ h1 {
             width: 100%;
             height: 32px;
             background-color: $empty;
-                
-            &.weak {
-                background-color: $weak;
-            }
-            
-            &.medium {
-                background-color: $medium;
-            }
-            
-            &.strong {
-                background-color: $strong;
-            }
-    
         }
     }
     .force-description {
         display: flex;
         justify-content: space-between;
     }
+}
+
+.red {
+    background-color: $weak !important;
+}
+
+.yellow {
+    background-color: $medium !important;
+}
+
+.green {
+    background-color: $strong !important;
 }
 
 .copy-button {

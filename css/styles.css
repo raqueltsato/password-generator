@@ -127,18 +127,21 @@ h1 {
   height: 32px;
   background-color: #2c1746;
 }
-.force-wrapper .force-box-wrapper .box.weak {
-  background-color: #e71b32;
-}
-.force-wrapper .force-box-wrapper .box.medium {
-  background-color: #faf408;
-}
-.force-wrapper .force-box-wrapper .box.strong {
-  background-color: #00ff85;
-}
 .force-wrapper .force-description {
   display: flex;
   justify-content: space-between;
+}
+
+.red {
+  background-color: #e71b32 !important;
+}
+
+.yellow {
+  background-color: #faf408 !important;
+}
+
+.green {
+  background-color: #00ff85 !important;
 }
 
 .copy-button {
