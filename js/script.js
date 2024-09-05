@@ -17,60 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const requirementsPassword = [includeUppercase, includeLowercase, includeNumbers, includeSymbols];
     if (requirementsPassword.every((requirement) => !Boolean(requirement))) return;
 
-    let forcePoint = requirementsPassword.reduce((accPoint, requirement) => {
-      let point = accPoint;
-      if (!!requirement) {
-        point += 2;
-      }
-      return point;
-    }, 0);
-
-    if (Number(length) === 7) {
-      forcePoint += 1;
-    }
-    if (Number(length) > 7 && length <= 8) {
-      forcePoint += 2;
-    }
-    if (Number(length) >= 9 && length <= 16) {
-      forcePoint += 3;
-    }
-    if (Number(length) >= 17) {
-      forcePoint += 4;
-    }
-
-    if (forcePoint <= 5) {
-      weakBox.classList.remove("green");
-      mediumBox.classList.remove("green");
-      strongBox.classList.remove("green");
-
-      weakBox.classList.remove("yellow");
-      mediumBox.classList.remove("yellow");
-
-      weakBox.classList.add("red");
-    }
-
-    if (forcePoint >= 6 && forcePoint <= 7) {
-      weakBox.classList.remove("green");
-      mediumBox.classList.remove("green");
-      strongBox.classList.remove("green");
-
-      weakBox.classList.remove("red");
-      mediumBox.classList.remove("red");
-      strongBox.classList.remove("red");
-
-      weakBox.classList.remove("green");
-      weakBox.classList.remove("green");
-
-      weakBox.classList.add("yellow");
-      mediumBox.classList.add("yellow");
-    }
-
-    if (forcePoint >= 8) {
-      weakBox.classList.add("green");
-      mediumBox.classList.add("green");
-      strongBox.classList.add("green");
-    }
-
     const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
     const numberChars = "0123456789";
@@ -98,6 +44,74 @@ document.addEventListener("DOMContentLoaded", () => {
     passwordText.textContent = password;
   }
 
+  function calculatepasswordStrength(length, includeUppercase, includeLowercase, includeNumbers, includeSymbols) {
+    const requirementsPassword = [includeUppercase, includeLowercase, includeNumbers, includeSymbols];
+    let forcePoint = requirementsPassword.reduce((accPoint, requirement) => {
+      let point = accPoint;
+      if (!!requirement) {
+        point += 2;
+      }
+      return point;
+    }, 0);
+
+    const lengthPoints = {
+      7: 1,
+      8: 2,
+      9: 3,
+      10: 3,
+      11: 3,
+      12: 3,
+      13: 3,
+      14: 3,
+      15: 3,
+      16: 3,
+    };
+
+    const getPointsForLength = lengthPoints[length] || (length >= 17 ? 4 : 0);
+
+    forcePoint += getPointsForLength;
+
+    const updateClasses = (forcePoint) => {
+      const classMap = {
+        low: {
+          range: forcePoint <= 5,
+          add: { weakBox: ["red"] },
+        },
+        medium: {
+          range: forcePoint >= 6 && forcePoint <= 7,
+          add: { weakBox: ["yellow"], mediumBox: ["yellow"] },
+        },
+        high: {
+          range: forcePoint >= 8,
+          add: { weakBox: ["green"], mediumBox: ["green"], strongBox: ["green"] },
+        },
+      };
+
+      [weakBox, mediumBox, strongBox].forEach((box) => {
+        box.classList.remove("green", "yellow", "red");
+      });
+
+      for (const key in classMap) {
+        if (classMap[key].range) {
+          const { add = {} } = classMap[key];
+
+          Object.keys(add).forEach((boxId) => {
+            const classesToAdd = add[boxId];
+            const box = {
+              weakBox,
+              mediumBox,
+              strongBox,
+            }[boxId];
+            classesToAdd.forEach((cls) => box.classList.add(cls));
+          });
+          break;
+        }
+      }
+    };
+
+    updateClasses(forcePoint);
+  }
+
   generatePasswordButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const numberOfCharacters = document.querySelector(".input-typed").value;
@@ -106,11 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const includeNumbers = document.getElementById("numbers").checked;
       const includeSymbols = document.getElementById("symbols").checked;
       generateRandomPassword(numberOfCharacters, includeUppercase, includeLowercase, includeNumbers, includeSymbols);
-      if ([includeUppercase, includeLowercase, includeNumbers, includeSymbols].every(Boolean)) {
-        weakBox.classList.add("green");
-        mediumBox.classList.add("green");
-        strongBox.classList.add("green");
-      }
+      calculatepasswordStrength(numberOfCharacters, includeUppercase, includeLowercase, includeNumbers, includeSymbols);
     });
   });
 });
