@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let password = "";
 
-    const allCharsAvailable = permitionCharsGroup.join();
+    const allCharsAvailable = permitionCharsGroup.join("");
 
     for (const group of permitionCharsGroup) {
       const randomIndex = Math.floor(Math.random() * group.length);
