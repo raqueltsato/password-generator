@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const strongBox = document.querySelector(".strong");
   const passwordText = document.querySelector(".password-text");
   const generatePasswordButtons = document.querySelectorAll(".generate-new-password");
+  const copyButton = document.querySelector(".copy-button");
 
   textInput.value = rangeInput.value;
 
@@ -111,6 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateClasses(forcePoint);
   }
+
+  copyButton.addEventListener("click", () => {
+    const passwordCopied = document.querySelector(".password-text");
+    if (passwordCopied.textContent) {
+      navigator.clipboard.writeText(passwordCopied.textContent);
+    }
+  });
 
   generatePasswordButtons.forEach((button) => {
     button.addEventListener("click", () => {
