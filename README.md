@@ -2,6 +2,7 @@
 
 
 Clique [aqui](https://raqueltsato.github.io/password-generator/) para acessar o site do projeto.
+
 <img width="1080" alt="Screenshot 2024-09-05 at 18 36 03" src="https://github.com/user-attachments/assets/61cbda05-a417-4958-9699-979b78691d6f">
 
 
