@@ -1,78 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gerador de senha</title>
-        <link rel="stylesheet" href="css/styles.css">
-        <meta name="keywords" content="Gerador de senhas, password-generator">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@500&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="content-wrapper">
-            <img src="/assets/unlock.svg" alt="Cadeado" width="37" height="37"/>
-            <h1>Gerador de senhas</h1>
-            <p class="subtitle">Gere instantaneamente uma senha aleatória e segura teste</p>
-            <div class="password-container-card">
-                <div class="password-wrapper">
-                    <p>senha</p>
-                    <p class="password-text"></p>
-                </div>
-                <div class="actions-wrapper">
-                    <img src="/assets/copy.svg" alt="Copuar" width="32" height="32"/>
-                    <img src="/assets/refresh.svg" alt="Gerar" width="32" height="32" class="generate-new-password"/>
-                </div>
-            </div>
-            <div class="settings-container">
-                <h2 class="settings-title">Personalize sua senha</h2>
-                <div class="settings-wrapper">
-                    <div class="characters-number">
-                        <p class="settings-description">Número de caracteres</p>
-                        <input type="range" class="input-range"min="6" max="20" value="12"/>
-                        <input class="input-typed" disabled>
-                    </div>
-                    <div class="password-type-checkbox">
-                        <p class="settings-description">Características da senha</p>
-                        <form>
-                            <div class="checkbox-wrapper">
-                                <input type="checkbox" id="uppercase">
-                                <label for="uppercase">Letras maiúsculas</label>
-                            </div>
-                            <div class="checkbox-wrapper">
-                                <input type="checkbox" id="lowercase" class="filled">
-                                <label for="lowercase">Letras minúsculas</label>
-                            </div>
-                            <div class="checkbox-wrapper">
-                                <input type="checkbox" id="numbers">
-                                <label for="numbers">Números</label>
-                            </div>
-                            <div class="checkbox-wrapper">
-                                <input type="checkbox" id="symbols">
-                                <label for="symbols">Símbolos</label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="force-wrapper">
-                        <p class="settings-description"> Força da senha</p>
-                        <div class="force-box-wrapper">
-                            <div class="box weak red">&nbsp;</div>
-                            <div class="box medium">&nbsp;</div>
-                            <div class="box strong">&nbsp;</div>
-                        </div>
-                        <div class="force-description">
-                            <p>Fraca</p>
-                            <p>Média</p>
-                            <p>Forte</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <button class="copy-button generate-new-password">Gerar senha</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de senha</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta name="keywords" content="Gerador de senhas, password-generator" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <img src="/assets/unlock.svg" alt="Cadeado" width="37" height="37" />
+      <h1>Gerador de senhas</h1>
+      <p class="subtitle">Gere instantaneamente uma senha aleatória e segura teste</p>
+      <div class="password-container-card">
+        <div class="password-wrapper">
+          <p>senha</p>
+          <p class="password-text"></p>
         </div>
-        <script src="js/script.js"></script>
-    </body>
+        <div class="actions-wrapper">
+          <img src="/assets/copy.svg" alt="Copiar" width="32" height="32" class="copy-button" />
+          <img src="/assets/refresh.svg" alt="Gerar" width="32" height="32" class="generate-new-password" />
+        </div>
+      </div>
+      <div class="settings-container">
+        <h2 class="settings-title">Personalize sua senha</h2>
+        <div class="settings-wrapper">
+          <div class="characters-number">
+            <p class="settings-description">Número de caracteres</p>
+            <input type="range" class="input-range" min="6" max="20" value="12" />
+            <input class="input-typed" disabled />
+          </div>
+          <div class="password-type-checkbox">
+            <p class="settings-description">Características da senha</p>
+            <form>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="uppercase" />
+                <label for="uppercase">Letras maiúsculas</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="lowercase" class="filled" />
+                <label for="lowercase">Letras minúsculas</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="numbers" />
+                <label for="numbers">Números</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="symbols" />
+                <label for="symbols">Símbolos</label>
+              </div>
+            </form>
+          </div>
+          <div class="force-wrapper">
+            <p class="settings-description">Força da senha</p>
+            <div class="force-box-wrapper">
+              <div class="box weak red">&nbsp;</div>
+              <div class="box medium">&nbsp;</div>
+              <div class="box strong">&nbsp;</div>
+            </div>
+            <div class="force-description">
+              <p>Fraca</p>
+              <p>Média</p>
+              <p>Forte</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="generate-button generate-new-password">Gerar senha</button>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
 </html>

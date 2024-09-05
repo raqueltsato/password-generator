@@ -1,175 +1,184 @@
-@import 'variables';
-
+@import "variables";
 
 body {
-    font-family: Arial, sans-serif;
-    background-color:  $background-color;
-    color: $description-color-font;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $description-color-font;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
-    text-align: center;
-    margin-top: 16px;
-    margin-bottom: 8px;
-    color: $principal-color-font;
-    font-size: 32px;
-    font-weight: bold;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: $principal-color-font;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .content-wrapper {
-    max-width: 1089px;
-    width: 100%;;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+  max-width: 1089px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 24px;
 
-    .subtitle {
-        margin-top: 8px;
-        font-size: 24px;
-        margin-bottom: 0;
-    }
+  .subtitle {
+    margin-top: 8px;
+    font-size: 24px;
+    margin-bottom: 0;
+  }
 }
 
 .password-container-card {
-    background-color: $password-background;
-    padding: 30px 40px;
+  background-color: $password-background;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 3px solid $pink;
+  margin-top: 57px;
+  margin-bottom: 28px;
+  align-items: center;
+
+  .password-wrapper {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    border-bottom: 3px solid $pink;
-    margin-top: 57px;
-    margin-bottom: 28px;
     align-items: center;
+    gap: 32px;
 
-    .password-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 32px;
-
-        .password-text {
-            font-size: 40px;
-            font-weight: 500;
-            color: $principal-color-font;
-        }
+    .password-text {
+      font-size: 40px;
+      font-weight: 500;
+      color: $principal-color-font;
+      margin: 0;
     }
+  }
 
-    .actions-wrapper {
-        display: flex;
-        gap: 32px;
-    }
+  .actions-wrapper {
+    display: flex;
+    gap: 32px;
+  }
 }
 
 .settings-container {
-    border: 1px solid #694a81;
+  border: 1px solid #694a81;
+  width: 100%;
+  padding: 35px 40px;
+
+  .settings-title {
+    font-family: "Roboto Mono", monospace;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 38px;
+  }
+
+  .settings-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .settings-description {
+      font-size: 24px;
+      margin-top: 0;
+    }
+  }
+
+  .input-range {
+    -webkit-appearance: none;
+    border-radius: 4px;
+    height: 8px;
+    background: gray;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.15s ease-in-out;
     width: 100%;
-    padding: 35px 40px;
+  }
 
-    .settings-title {
-        font-family: "Roboto Mono", monospace;
-        font-size: 28px;
-        margin-top: 0;
-        margin-bottom: 38px;;
-    }
+  input[type="range"]::-webkit-slider-thumb {
+    width: 28px;
+    -webkit-appearance: none;
+    height: 28px;
+    border-radius: 50%;
+    z-index: 10000;
+    cursor: ew-resize;
+    background: white;
+  }
 
-    .settings-wrapper {
-        display: flex;
-        justify-content: space-between;
-
-        .settings-description {
-            font-size: 24px;
-            margin-top: 0;
-        }
-    }
-
-    .input-range {
-        -webkit-appearance: none;
-        border-radius: 4px;
-        height: 8px;
-        background: gray; 
-        outline: none;
-        opacity: 0.7;
-        transition: opacity .15s ease-in-out;
-        width: 100%;
-    }
-
-    .input-range::-ms-fill-lower {
-        background-color: white;
-    }
-
-    .input-typed {
-        max-width: 80px;
-        font-size: 24px;
-        height: 50px;
-        border: 1px solid $input-border;
-        background-color: $input-background;
-        margin-top: 24px;
-    }
+  .input-typed {
+    max-width: 80px;
+    font-size: 24px;
+    height: 50px;
+    border: 1px solid $input-border;
+    background-color: $input-background;
+    margin-top: 24px;
+  }
 }
 
 .password-type-checkbox {
+  font-size: 20px;
 
-    font-size: 20px;
+  input {
+    width: 24px;
+    height: 24px;
+    accent-color: #fff;
+    margin-right: 12px;
 
-    input {
-        width: 24px;
-        height: 24px;
-
-        &.filled {
-            background-color: #fff;
-            color: black;
-        }
+    &.filled {
+      background-color: #fff;
+      color: black;
     }
-    .checkbox-wrapper {
-        margin-bottom: 16px;
-    }
+  }
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
 }
 
 .force-wrapper {
-    width: 300px;
+  width: 300px;
 
-    .force-box-wrapper {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        align-items: center;
-    
-        .box {
-            width: 100%;
-            height: 32px;
-            background-color: $empty;
-        }
+  .force-box-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+    .box {
+      width: 100%;
+      height: 32px;
+      background-color: $empty;
     }
-    .force-description {
-        display: flex;
-        justify-content: space-between;
-    }
+  }
+  .force-description {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .red {
-    background-color: $weak !important;
+  background-color: $weak !important;
 }
 
 .yellow {
-    background-color: $medium !important;
+  background-color: $medium !important;
 }
 
 .green {
-    background-color: $strong !important;
+  background-color: $strong !important;
 }
 
-.copy-button {
-    margin-top: 36px;
-    outline: none;
-    border: none;
-    background-color: $pink;
-    height: 46px;
-    font-size: 22px;
-    border-radius: 4px;
-    padding: 10px 12px;
-    
+.generate-button {
+  margin-top: 36px;
+  outline: none;
+  border: none;
+  background-color: $pink;
+  height: 46px;
+  font-size: 22px;
+  border-radius: 4px;
+  padding: 10px 12px;
 }
